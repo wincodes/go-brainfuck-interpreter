@@ -17,9 +17,10 @@ var mpointer int = 0
 // Address stack. Used to track addresses (index) of left brackets
 var astack []int
 
-var program string = "++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++."
-var input string = ""
-var output string = ""
+var program string
+//"++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++."
+var input string
+var output string
 
 func resetState() {
 	// Clear memory, reset pointers to zero.
@@ -56,6 +57,8 @@ func getInput() int32 {
 }
 
 func interpret() string {
+	fmt.Printf("Interpreting code %v", program)
+	
 	var end bool = false
 
 	for !end {
@@ -129,6 +132,9 @@ func main() {
 	for i := range memory {
 		memory[i] = 0
 	}
+
+	fmt.Println("Kindly input the Brain Fuck Code: ")
+	fmt.Scan(&program)
 
 	var outp string = interpret();
 	fmt.Println(outp)
