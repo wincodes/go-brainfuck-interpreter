@@ -93,9 +93,6 @@ func interpret() string {
 				var count = 0
 				if true {
 					ipointer++
-					// if !program[ipointer] {
-					// 	break
-					// }
 					if len(program) < ipointer {
 						break
 					}
